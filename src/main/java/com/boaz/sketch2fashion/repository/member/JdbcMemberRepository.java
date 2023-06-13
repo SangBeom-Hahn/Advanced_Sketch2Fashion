@@ -43,7 +43,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
     @Override
     public Member findById(Long id) {
-        String sql = "select * from member where id = :id";
+        String sql = "select * from member where member_id = :id";
         Map<String, Object> param = Map.of("id", id);
         Member member = template.queryForObject(sql, param, memberRowMapper());
         return member;
@@ -64,7 +64,8 @@ public class JdbcMemberRepository implements MemberRepository {
                 .addValue("name", memberUpdateDTO.getName())
                 .addValue("loginId", memberUpdateDTO.getLoginId())
                 .addValue("password", memberUpdateDTO.getPassword())
-                .addValue("email", memberUpdateDTO.getEmail());
+                .addValue("email", memberUpdateDTO.getEmail())
+                .addValue("id", id);
 
         template.update(sql, param);
     }
