@@ -59,7 +59,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
     @Override
     public void update(Long id, MemberUpdateDTO memberUpdateDTO) {
-        String sql = "update member set name = :name, login_id = :loginId, password = :password, email = :email where id = :id";
+        String sql = "update member set name = :name, login_id = :loginId, password = :password, email = :email where member_id = :id";
         SqlParameterSource param = new MapSqlParameterSource()
                 .addValue("name", memberUpdateDTO.getName())
                 .addValue("loginId", memberUpdateDTO.getLoginId())
@@ -72,7 +72,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
     @Override
     public void delete(Long id) {
-        String sql = "delete from member where id = :id";
+        String sql = "delete from member where member_id = :id";
         Map<String, Object> param = Map.of("id", id);
         template.update(sql, param);
     }
