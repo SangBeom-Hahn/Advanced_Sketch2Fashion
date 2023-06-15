@@ -1,8 +1,6 @@
 package com.boaz.sketch2fashion.repository.member;
 
 import com.boaz.sketch2fashion.domain.Member;
-import com.boaz.sketch2fashion.repository.member.MemberRepository;
-import com.boaz.sketch2fashion.repository.member.dto.MemberSaveDTO;
 import com.boaz.sketch2fashion.repository.member.dto.MemberUpdateDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -16,8 +14,6 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.security.Signature;
-import java.util.List;
 import java.util.Map;
 
 @Slf4j

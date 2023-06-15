@@ -9,6 +9,5 @@ public interface MemberRepository {
     Member findById(Long id);
     Member findByLoginId(String loginId);
     void update(Long id, MemberUpdateDTO memberUpdateDTO);
-
     void delete(Long id);
 }
