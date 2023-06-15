@@ -17,7 +17,3 @@ CREATE TABLE choose_list (
         FOREIGN KEY (member_id)
             REFERENCES member (member_id)
 );
-
-
-
-
