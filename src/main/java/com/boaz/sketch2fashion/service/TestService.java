@@ -26,7 +26,7 @@ public class TestService {
 
         // RestTemplate의 exchange 메소드를 통해 URL에 HttpEntity와 함께 요청
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> responseEntity = restTemplate.exchange("http://localhost:8080/test", HttpMethod.POST,
+        ResponseEntity<String> responseEntity = restTemplate.exchange("http://localhost:5000/image/test", HttpMethod.POST,
                 entity, String.class);
 
         // 요청 후 응답 확인
