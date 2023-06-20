@@ -11,6 +11,6 @@ public class TestInitData {
     private final MemberRepository memberRepository;
     @EventListener(ApplicationReadyEvent.class)
     public void initData() {
-        memberRepository.save(new Member("a", "a", "a", "a"));
+//        memberRepository.save(new Member("a", "a", "a", "a"));
     }
 }
