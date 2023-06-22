@@ -71,7 +71,7 @@ class JdbcMemberRepositoryTest {
 
         // when
         Member saveMember = memberRepository.save(memberA);
-        Member findMember = memberRepository.findByLoginId(saveMember.getLoginId());
+        Member findMember = memberRepository.findByLoginId(saveMember.getLoginId()).orElse(null);
 
         // then
         assertThat(saveMember).isEqualTo(findMember);
@@ -85,7 +85,7 @@ class JdbcMemberRepositoryTest {
         // when
         Member saveMember = memberRepository.save(member);
         memberRepository.update(saveMember.getId(), new MemberUpdateDTO("b", "b", "b", "b"));
-        Member updateMember = memberRepository.findByLoginId("b");
+        Member updateMember = memberRepository.findByLoginId("b").orElse(null);
 
         // then
         assertThat(updateMember.getEmail()).isEqualTo("b");

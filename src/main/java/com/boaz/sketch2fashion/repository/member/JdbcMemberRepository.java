@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.Map;
+import java.util.Optional;
 
 @Slf4j
 @Repository
@@ -46,11 +47,11 @@ public class JdbcMemberRepository implements MemberRepository {
     }
 
     @Override
-    public Member findByLoginId(String loginId) {
+    public Optional<Member> findByLoginId(String loginId) {
         String sql = "select * from member where login_id = :loginId";
         Map<String, Object> param = Map.of("loginId", loginId);
         Member member = template.queryForObject(sql, param, memberRowMapper());
-        return member;
+        return Optional.ofNullable(member);
     }
 
     @Override
