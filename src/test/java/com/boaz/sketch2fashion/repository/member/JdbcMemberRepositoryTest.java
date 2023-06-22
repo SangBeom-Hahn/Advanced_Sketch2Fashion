@@ -24,7 +24,7 @@ class JdbcMemberRepositoryTest {
     @Test
     void save() {
         // given
-        Member memberA = new Member("a", "a", "a", "a");
+        Member memberA = new Member("a", "a", "a", "b");
 
         // when
         Member saveMember = memberRepository.save(memberA);
